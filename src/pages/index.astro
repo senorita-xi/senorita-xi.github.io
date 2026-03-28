@@ -16,12 +16,13 @@ const inMotion     = (await getCollection('in-motion',    ({ data }) => !data.dr
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-xi fade-up">ξ</div>
-        <h1 class="hero-title fade-up fade-up-1">
-          Chasing<br /><em>Wanderlust</em>
+        <h1 class="hero-title">
+          <span class="line-xi fade-up">ξ</span>
+          <span class="line-chasing fade-up fade-up-1">Chasing</span>
+          <span class="line-wanderlust fade-up fade-up-2">Wanderlust</span>
         </h1>
-        <div class="hero-rule fade-up fade-up-2"></div>
-        <p class="hero-sub fade-up fade-up-3">
+        <div class="hero-rule fade-up fade-up-3"></div>
+        <p class="hero-sub fade-up fade-up-4">
           Wandering the world, one bite, book & mile at a time.
         </p>
       </div>
@@ -64,74 +65,67 @@ const inMotion     = (await getCollection('in-motion',    ({ data }) => !data.dr
   .hero {
     padding-block: clamp(4rem, 10vw, 8rem);
     border-bottom: 1px solid var(--cream);
-    overflow: hidden;
   }
 
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
-    position: relative;
-  }
-
-  .hero-xi {
-    font-family: var(--font-display);
-    font-size: clamp(4rem, 14vw, 11rem);
-    font-style: italic;
-    font-weight: 400;
-    color: var(--cream);
-    line-height: 1;
-    user-select: none;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
   }
 
   .hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 7rem);
     font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
   }
 
-  .hero-title em {
+  /* Line 1: ξ — slate blue, italic, smaller — a decorative mark */
+  .line-xi {
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
     font-style: italic;
-    color: var(--sienna);
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.1em;
+  }
+
+  /* Line 2: Chasing — mist, upright — recedes, creates pause */
+  .line-chasing {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--mist);
+    margin-bottom: 0.05em;
+  }
+
+  /* Line 3: Wanderlust — ink, bold italic — dominant, the landing point */
+  .line-wanderlust {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.03em;
   }
 
   .hero-rule {
-    width: clamp(3rem, 8vw, 6rem);
+    width: clamp(2.5rem, 6vw, 4.5rem);
     height: 1px;
-    background-color: var(--sienna);
-    margin-bottom: 1.5rem;
+    background-color: var(--accent);
+    margin-bottom: 1.25rem;
+    opacity: 0.5;
   }
 
   .hero-sub {
     font-family: var(--font-body);
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
     font-style: italic;
     color: var(--mist);
-    max-width: 38ch;
-    line-height: 1.65;
+    max-width: 40ch;
+    line-height: 1.7;
     margin-bottom: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  @media (max-width: 640px) {
-    .hero-xi {
-      position: static;
-      transform: none;
-      font-size: clamp(3.5rem, 20vw, 6rem);
-      margin-bottom: -1rem;
-      color: var(--cream);
-    }
   }
 </style>

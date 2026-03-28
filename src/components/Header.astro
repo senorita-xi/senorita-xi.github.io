@@ -6,6 +6,7 @@ const nav = [
   { label: 'Savour',     href: '/savour/' },
   { label: 'Pages & Frames', href: '/pages-frames/' },
   { label: 'In Motion', href: '/in-motion/' },
+  { label: 'Contacts',  href: '/contacts/' },
 ];
 
 function isActive(href: string) {
@@ -110,7 +111,7 @@ function isActive(href: string) {
   }
 
   .site-logo:hover .xi-mark {
-    color: var(--sienna);
+    color: var(--accent);
   }
 
   .site-nav {
@@ -138,7 +139,7 @@ function isActive(href: string) {
     left: 0.75rem;
     right: 0.75rem;
     height: 1px;
-    background-color: var(--sienna);
+    background-color: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -167,7 +168,7 @@ function isActive(href: string) {
   }
 
   .ig-link:hover {
-    color: var(--sienna);
+    color: var(--accent);
   }
 
   .menu-toggle {
@@ -223,7 +224,7 @@ function isActive(href: string) {
 
   .mobile-nav-link:last-child { border-bottom: none; }
   .mobile-nav-link:hover,
-  .mobile-nav-link.active { color: var(--sienna); }
+  .mobile-nav-link.active { color: var(--accent); }
 
   .ig-mobile { color: var(--sage); }
 

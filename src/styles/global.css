@@ -2,8 +2,8 @@
 :root {
   --ivory:  #F7F4EF;
   --ink:    #1A1612;
-  --sienna: #C4856A;
-  --sage:   #7A8C7E;
+  --accent: #3D607A;   /* slate blue — refined, professional */
+  --sage:   #6B8471;
   --cream:  #EDE8DF;
   --mist:   #9E9890;
   --white:  #FFFFFF;
@@ -135,7 +135,7 @@ img {
 .prose p { margin-bottom: 1.4em; }
 
 .prose blockquote {
-  border-left: 2px solid var(--sienna);
+  border-left: 2px solid var(--accent);
   padding-left: 1.5rem;
   margin: 2em 0;
   font-style: italic;
@@ -150,12 +150,12 @@ img {
 .prose li { margin-bottom: 0.4em; }
 
 .prose a {
-  color: var(--sienna);
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: text-decoration-color 0.2s;
 }
-.prose a:hover { text-decoration-color: var(--sienna); }
+.prose a:hover { text-decoration-color: var(--accent); }
 
 /* ─── Scroll reveal via Intersection Observer ───────────────── */
 .reveal {
@@ -189,7 +189,7 @@ img {
 }
 
 .view-all:hover {
-  color: var(--sienna);
+  color: var(--accent);
   gap: 0.65rem;
 }
 
