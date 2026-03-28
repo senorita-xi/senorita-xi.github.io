@@ -1,32 +1,26 @@
 ---
 import PostCard from './PostCard.astro';
 import type { CollectionEntry } from 'astro:content';
-import { getLang, useTranslations, localHref } from '@/i18n/utils';
+import { getLang, useTranslations } from '@/i18n/utils';
 import { bareSlug } from '@/i18n/paths';
 import type { UIKey } from '@/i18n/ui';
 
 interface Props {
-  number: string;
   labelKey: UIKey;
-  descKey?: UIKey;
-  href: string;   // already lang-prefixed, e.g. /footprints/ or /bg/footprints/
+  href: string;   // already lang-prefixed
   posts: CollectionEntry<'footprints' | 'savour' | 'pages-frames' | 'in-motion'>[];
 }
 
-const { number, labelKey, href, posts } = Astro.props;
+const { labelKey, href, posts } = Astro.props;
 const lang = getLang(Astro.currentLocale);
 const t    = useTranslations(lang);
 ---
 
 <section class="category-section reveal">
   <div class="section-header">
-    <div class="section-title-group">
-      <span class="section-number">{number}</span>
-      <h2 class="section-title">{t(labelKey)}</h2>
-    </div>
+    <h2 class="section-title">{t(labelKey)}</h2>
     <a href={href} class="view-all">{t('ui.viewAll')}</a>
   </div>
-
   <hr class="rule" />
 
   <div class="cards-grid">
@@ -46,13 +40,36 @@ const t    = useTranslations(lang);
 </section>
 
 <style>
-  .category-section { padding-block: clamp(2.5rem, 5vw, 4rem); border-bottom: 1px solid var(--cream); }
-  .section-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
-  .section-title-group { display: flex; align-items: baseline; gap: 1.25rem; }
-  .section-number { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; color: var(--cream); line-height: 1; user-select: none; flex-shrink: 0; }
-  .section-title { font-family: var(--font-label); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
+  .category-section {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--cream);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--font-label);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
   .rule { margin-bottom: 2rem; }
-  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 3vw, 2rem); }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+
   @media (max-width: 900px) { .cards-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 540px) { .cards-grid { grid-template-columns: 1fr; } }
 </style>

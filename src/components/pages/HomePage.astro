@@ -32,31 +32,32 @@ const [footprints, savour, pagesFrames, inMotion] = await Promise.all([
     </div>
   </section>
 
+  <!-- Instagram feed strip — full width, no header -->
+  <InstagramGrid minimal />
+
   <!-- Category sections -->
   <div class="container">
     <CategorySection
-      number="01" labelKey="nav.footprints" descKey="desc.footprints"
+      labelKey="nav.footprints"
       href={localHref('/footprints/', lang)}
       posts={footprints.slice(0, 3)}
     />
     <CategorySection
-      number="02" labelKey="nav.savour" descKey="desc.savour"
+      labelKey="nav.savour"
       href={localHref('/savour/', lang)}
       posts={savour.slice(0, 3)}
     />
     <CategorySection
-      number="03" labelKey="nav.pagesFrames" descKey="desc.pagesFrames"
+      labelKey="nav.pagesFrames"
       href={localHref('/pages-frames/', lang)}
       posts={pagesFrames.slice(0, 3)}
     />
     <CategorySection
-      number="04" labelKey="nav.inMotion" descKey="desc.inMotion"
+      labelKey="nav.inMotion"
       href={localHref('/in-motion/', lang)}
       posts={inMotion.slice(0, 3)}
     />
   </div>
-
-  <InstagramGrid />
 </BaseLayout>
 
 <style>
