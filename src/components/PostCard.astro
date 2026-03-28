@@ -10,9 +10,14 @@ interface Props {
   delay?: number;
 }
 
+import { getLang, useTranslations } from '@/i18n/utils';
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const locale = lang === 'bg' ? 'bg-BG' : 'en-US';
+
 const { title, href, coverImage, description, pubDate, category, location, delay = 0 } = Astro.props;
 
-const formattedDate = pubDate.toLocaleDateString('en-US', {
+const formattedDate = pubDate.toLocaleDateString(locale, {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -30,7 +35,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
         height="540"
       />
       <div class="card-overlay">
-        <span class="overlay-read">Read →</span>
+        <span class="overlay-read">{t('ui.read')}</span>
       </div>
     </div>
   </a>

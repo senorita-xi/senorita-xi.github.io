@@ -14,6 +14,10 @@
   ─────────────────────────────────────────────────────────────────
 */
 
+import { getLang, useTranslations } from '@/i18n/utils';
+const lang = getLang(Astro.currentLocale);
+const t    = useTranslations(lang);
+
 const BEHOLD_FEED_ID = ''; // ← paste your Behold Feed ID here
 const showWidget = BEHOLD_FEED_ID.length > 0;
 ---
@@ -22,7 +26,7 @@ const showWidget = BEHOLD_FEED_ID.length > 0;
   <div class="container">
     <div class="ig-header">
       <div class="ig-title-group">
-        <span class="ig-eyebrow">Follow Along</span>
+        <span class="ig-eyebrow">{t('ui.followAlong')}</span>
         <a
           href="https://www.instagram.com/senorita.xi/"
           target="_blank"
@@ -38,7 +42,7 @@ const showWidget = BEHOLD_FEED_ID.length > 0;
         rel="noopener noreferrer"
         class="view-all"
       >
-        View on Instagram
+        {t('ui.viewOnInstagram')}
       </a>
     </div>
 

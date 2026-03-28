@@ -4,5 +4,12 @@ export default defineConfig({
   output: 'static',
   site: 'https://senorita-xi.github.io',
   // base: '/xi_blog',  // Uncomment if deploying to a project page (not user page)
-  // integrations: [sitemap()],  // Uncomment once site URL is confirmed
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'bg'],
+    routing: {
+      prefixDefaultLocale: false,  // English at /, Bulgarian at /bg/
+    },
+  },
 });

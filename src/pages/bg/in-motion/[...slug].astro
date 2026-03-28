@@ -1,11 +1,13 @@
 ---
 import PostLayout from '@/layouts/PostLayout.astro';
 import { getCategoryPaths } from '@/i18n/paths';
+import { useTranslations } from '@/i18n/utils';
 
 export async function getStaticPaths() {
-  return getCategoryPaths('footprints', 'en');
+  return getCategoryPaths('in-motion', 'bg');
 }
 
+const t = useTranslations('bg');
 const { post, isFallback } = Astro.props;
 const { Content } = await post.render();
 ---
@@ -17,9 +19,9 @@ const { Content } = await post.render();
   pubDate={post.data.pubDate}
   category={post.data.category}
   location={post.data.location}
-  categoryHref="/footprints/"
-  categoryLabel="Footprints"
-  lang="en"
+  categoryHref="/bg/in-motion/"
+  categoryLabel={t('nav.inMotion')}
+  lang="bg"
   isFallback={isFallback}
 >
   <Content />

@@ -1,5 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getLang, useTranslations } from '@/i18n/utils';
+import type { Lang } from '@/i18n/ui';
 
 interface Props {
   title: string;
@@ -10,18 +12,23 @@ interface Props {
   location?: string;
   categoryHref: string;
   categoryLabel: string;
+  lang?: Lang;
+  isFallback?: boolean;
 }
 
-const { title, description, coverImage, pubDate, category, location, categoryHref, categoryLabel } = Astro.props;
+const { title, description, coverImage, pubDate, category, location, categoryHref, categoryLabel, lang: langProp, isFallback = false } = Astro.props;
+const lang = langProp ?? getLang(Astro.currentLocale);
+const t    = useTranslations(lang);
+const locale = lang === 'bg' ? 'bg-BG' : 'en-US';
 
-const formattedDate = pubDate.toLocaleDateString('en-US', {
+const formattedDate = pubDate.toLocaleDateString(locale, {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
 ---
 
-<BaseLayout title={`${title} — ξ Chasing Wanderlust`} description={description} image={coverImage}>
+<BaseLayout lang={lang} title={`${title} — ξ Chasing Wanderlust`} description={description} image={coverImage}>
   <article class="post-page">
     <!-- Hero -->
     <div class="post-hero fade-up">
@@ -41,6 +48,10 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
       <div class="post-breadcrumb">
         <a href={categoryHref} class="back-link">← {categoryLabel}</a>
       </div>
+
+      {isFallback && (
+        <div class="fallback-notice">{t('ui.fallbackNotice')}</div>
+      )}
 
       <div class="post-meta-row">
         {location && <span class="post-location">{location}</span>}
@@ -98,6 +109,18 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 
   .post-breadcrumb {
     margin-bottom: 1.5rem;
+  }
+
+  .fallback-notice {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--ivory);
+    background-color: var(--mist);
+    padding: 0.35rem 0.75rem;
+    border-radius: 2px;
   }
 
   .back-link {

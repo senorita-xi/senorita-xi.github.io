@@ -1,20 +1,27 @@
 ---
+import { getLang, useTranslations, localHref } from '@/i18n/utils';
+import type { Lang } from '@/i18n/ui';
+
+interface Props { lang?: Lang; }
+const { lang: langProp } = Astro.props;
+const lang = langProp ?? getLang(Astro.currentLocale);
+const t    = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <a href="/" class="footer-logo" aria-label="Home">
+    <a href={localHref('/', lang)} class="footer-logo" aria-label="Home">
       <span class="footer-xi">ξ</span>
       <span class="footer-name">Chasing Wanderlust</span>
     </a>
 
     <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="/footprints/" class="footer-link">Footprints</a>
-      <a href="/savour/" class="footer-link">Savour</a>
-      <a href="/pages-frames/" class="footer-link">Pages & Frames</a>
-      <a href="/in-motion/" class="footer-link">In Motion</a>
-      <a href="/contacts/" class="footer-link">Contacts</a>
+      <a href={localHref('/footprints/', lang)}  class="footer-link">{t('nav.footprints')}</a>
+      <a href={localHref('/savour/', lang)}       class="footer-link">{t('nav.savour')}</a>
+      <a href={localHref('/pages-frames/', lang)} class="footer-link">{t('nav.pagesFrames')}</a>
+      <a href={localHref('/in-motion/', lang)}    class="footer-link">{t('nav.inMotion')}</a>
+      <a href={localHref('/contacts/', lang)}     class="footer-link">{t('nav.contacts')}</a>
     </nav>
 
     <div class="footer-right">

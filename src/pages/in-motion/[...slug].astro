@@ -1,16 +1,12 @@
 ---
 import PostLayout from '@/layouts/PostLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCategoryPaths } from '@/i18n/paths';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('in-motion');
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+  return getCategoryPaths('in-motion', 'en');
 }
 
-const { post } = Astro.props;
+const { post, isFallback } = Astro.props;
 const { Content } = await post.render();
 ---
 
@@ -23,6 +19,8 @@ const { Content } = await post.render();
   location={post.data.location}
   categoryHref="/in-motion/"
   categoryLabel="In Motion"
+  lang="en"
+  isFallback={isFallback}
 >
   <Content />
 </PostLayout>
