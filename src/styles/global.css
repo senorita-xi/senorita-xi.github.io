@@ -1,11 +1,11 @@
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  --ivory:  #F7F4EF;
-  --ink:    #1A1612;
-  --accent: #3D607A;   /* slate blue — refined, professional */
-  --sage:   #6B8471;
-  --cream:  #EDE8DF;
-  --mist:   #9E9890;
+  --ivory:  #FEFCF8;   /* near-white, barely warm — main background  */
+  --ink:    #2A2520;   /* warm near-black — softer than cold #000     */
+  --accent: #C4A882;   /* champagne gold — the signature feminine tone */
+  --sage:   #C9B4AC;   /* dusty blush rose — secondary accent         */
+  --cream:  #EDE4D4;   /* warm champagne — cards, dividers, sections  */
+  --mist:   #B5ADA5;   /* warm mist — secondary text                  */
   --white:  #FFFFFF;
 
   --font-display: 'Playfair Display', Georgia, serif;

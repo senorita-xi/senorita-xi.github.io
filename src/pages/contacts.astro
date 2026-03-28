@@ -1,5 +1,16 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+
+/*
+  PHOTO SETUP
+  ─────────────────────────────────────────────────────────────────
+  Add your portrait photo at:  public/images/me.jpg
+  (any aspect ratio works, but portrait 2:3 looks best)
+
+  Then set `hasPhoto = true` below to show the image.
+  ─────────────────────────────────────────────────────────────────
+*/
+const hasPhoto = false; // ← set to true once you've added public/images/me.jpg
 ---
 
 <BaseLayout
@@ -7,148 +18,261 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="Get in touch — collaborations, questions, or just to say hello."
 >
   <div class="contacts-page">
-    <div class="container">
 
-      <header class="contacts-header fade-up">
-        <div class="contacts-num">05</div>
-        <div class="contacts-info">
-          <h1 class="contacts-title">Contacts</h1>
-          <p class="contacts-desc">Collaborations, questions, or just to say hello.</p>
+    <!-- ── Portrait + Intro ── -->
+    <div class="portrait-section">
+      <div class="container portrait-inner">
+
+        <div class="portrait-photo-col fade-up">
+          {hasPhoto ? (
+            <img
+              src="/images/me.jpg"
+              alt="Portrait photo"
+              class="portrait-img"
+              width="480"
+              height="640"
+            />
+          ) : (
+            <div class="portrait-placeholder" aria-hidden="true">
+              <div class="placeholder-inner">
+                <span class="placeholder-xi">ξ</span>
+                <p class="placeholder-hint">
+                  Add <code>public/images/me.jpg</code><br />
+                  and set <code>hasPhoto = true</code>
+                </p>
+              </div>
+            </div>
+          )}
         </div>
-      </header>
 
-      <hr class="rule" />
-
-      <div class="contacts-body fade-up fade-up-1">
-
-        <div class="contacts-intro">
-          <p>
+        <div class="portrait-text-col fade-up fade-up-1">
+          <div class="portrait-eyebrow">05</div>
+          <h1 class="portrait-title">Contacts</h1>
+          <hr class="portrait-rule" />
+          <p class="portrait-intro">
             I'm always open to conversations about travel, food, books, and everything in between.
             Whether you'd like to collaborate, share a recommendation, or simply connect —
-            feel free to reach out.
+            feel free to reach out through Instagram.
           </p>
-        </div>
 
-        <div class="contacts-grid">
-
-          <div class="contact-block reveal">
-            <span class="contact-label">Instagram</span>
-            <a
-              href="https://www.instagram.com/senorita.xi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-value contact-link"
-            >
-              @senorita.xi
-              <span class="contact-arrow">↗</span>
-            </a>
-            <p class="contact-note">
-              The most immediate place to find me — stories, posts, and moments from the road.
-            </p>
-          </div>
-
-          <div class="contact-block reveal" style="transition-delay: 80ms">
-            <span class="contact-label">Collaborations</span>
-            <p class="contact-value">
-              Open to travel partnerships, restaurant features, book & film collaborations,
-              and wellness brand projects that align with the spirit of this space.
-            </p>
-          </div>
-
-          <div class="contact-block reveal" style="transition-delay: 160ms">
-            <span class="contact-label">Say Hello</span>
-            <p class="contact-value">
-              Have a destination recommendation? A book I must read? A restaurant not to miss?
-              I genuinely love hearing from people who share the same curiosities.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="contacts-ig-cta reveal">
           <a
             href="https://www.instagram.com/senorita.xi/"
             target="_blank"
             rel="noopener noreferrer"
-            class="ig-cta-btn"
+            class="portrait-ig-link"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
             </svg>
-            Send a message on Instagram
+            @senorita.xi
           </a>
         </div>
 
       </div>
     </div>
+
+    <!-- ── Info Cards ── -->
+    <div class="container">
+      <div class="contacts-grid">
+
+        <div class="contact-block reveal">
+          <span class="contact-label">Instagram</span>
+          <a
+            href="https://www.instagram.com/senorita.xi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-value contact-link"
+          >
+            @senorita.xi
+            <span class="contact-arrow">↗</span>
+          </a>
+          <p class="contact-note">
+            The most immediate place to find me — stories, posts, and moments from the road.
+          </p>
+        </div>
+
+        <div class="contact-block reveal" style="transition-delay: 90ms">
+          <span class="contact-label">Collaborations</span>
+          <p class="contact-value collab-text">
+            Open to travel partnerships, restaurant features, book & film collaborations,
+            and wellness brand projects that align with the spirit of this space.
+          </p>
+        </div>
+
+        <div class="contact-block reveal" style="transition-delay: 180ms">
+          <span class="contact-label">Say Hello</span>
+          <p class="contact-value collab-text">
+            A destination recommendation? A book I must read? A restaurant not to miss?
+            I genuinely love hearing from people who share the same curiosities.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="contacts-cta reveal">
+        <a
+          href="https://www.instagram.com/senorita.xi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ig-cta-btn"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          Send a message on Instagram
+        </a>
+      </div>
+    </div>
+
   </div>
 </BaseLayout>
 
 <style>
   .contacts-page {
-    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(4rem, 8vw, 7rem);
+    padding-bottom: clamp(4rem, 8vw, 7rem);
   }
 
-  .contacts-header {
+  /* ── Portrait section ── */
+  .portrait-section {
+    background-color: var(--cream);
+    padding-block: clamp(3rem, 7vw, 6rem);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .portrait-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  /* Photo */
+  .portrait-photo-col { position: relative; }
+
+  .portrait-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .portrait-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: var(--ivory);
+    border: 1px dashed var(--mist);
     display: flex;
-    align-items: flex-end;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-content: center;
   }
 
-  .contacts-num {
+  .placeholder-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .placeholder-xi {
     font-family: var(--font-display);
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 400;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-style: italic;
     color: var(--cream);
     line-height: 1;
-    flex-shrink: 0;
     user-select: none;
   }
 
-  .contacts-info { padding-bottom: 0.5rem; }
+  .placeholder-hint {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--mist);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
 
-  .contacts-title {
+  .placeholder-hint code {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    background: none;
+  }
+
+  /* Text column */
+  .portrait-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .portrait-eyebrow {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 400;
+    color: var(--ivory);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .portrait-title {
     font-family: var(--font-label);
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--ink);
-    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
   }
 
-  .contacts-desc {
-    font-size: 0.9375rem;
-    color: var(--mist);
-    font-style: italic;
-    margin-bottom: 0;
-    max-width: 50ch;
+  .portrait-rule {
+    border: none;
+    border-top: 1px solid var(--mist);
+    opacity: 0.35;
+    margin-block: 0.5rem;
   }
 
-  .rule { margin-bottom: 3rem; }
-
-  .contacts-intro {
-    max-width: 56ch;
-    margin-bottom: 3.5rem;
-  }
-
-  .contacts-intro p {
+  .portrait-intro {
     font-family: var(--font-body);
     font-size: 1.0625rem;
-    line-height: 1.8;
-    color: var(--mist);
     font-style: italic;
-    margin-bottom: 0;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    opacity: 0.75;
   }
 
+  .portrait-ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-label);
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    transition: gap 0.2s, color 0.2s;
+  }
+
+  .portrait-ig-link:hover {
+    color: var(--ink);
+    gap: 0.75rem;
+  }
+
+  /* ── Info cards ── */
   .contacts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(1.5rem, 3vw, 3rem);
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
 
   .contact-block {
@@ -175,12 +299,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     line-height: 1.4;
   }
 
+  .collab-text {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--mist);
+  }
+
   .contact-link {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
     text-decoration: none;
-    position: relative;
     transition: color 0.2s;
   }
 
@@ -189,7 +320,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   .contact-arrow {
     font-style: normal;
     font-size: 0.875rem;
-    opacity: 0.5;
+    opacity: 0.45;
     transition: opacity 0.2s, transform 0.2s;
   }
 
@@ -205,8 +336,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     margin-bottom: 0;
   }
 
-  /* CTA button */
-  .contacts-ig-cta {
+  /* CTA */
+  .contacts-cta {
     padding-top: 2.5rem;
     border-top: 1px solid var(--cream);
   }
@@ -217,19 +348,34 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     gap: 0.65rem;
     font-family: var(--font-label);
     font-size: 0.8125rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ivory);
     background-color: var(--accent);
-    padding: 0.8rem 1.75rem;
-    border-radius: 2px;
+    padding: 0.85rem 2rem;
+    border-radius: 1px;
     text-decoration: none;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.25s, transform 0.2s;
   }
 
   .ig-cta-btn:hover {
     background-color: var(--ink);
     transform: translateY(-1px);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 800px) {
+    .portrait-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .portrait-photo-col {
+      max-width: 320px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .portrait-eyebrow { font-size: clamp(2rem, 10vw, 4rem); }
   }
 
   @media (max-width: 860px) {
