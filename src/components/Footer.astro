@@ -1,0 +1,114 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="footer-logo" aria-label="Home">
+      <span class="footer-xi">ξ</span>
+      <span class="footer-name">Chasing Wanderlust</span>
+    </a>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/footprints/" class="footer-link">Footprints</a>
+      <a href="/savour/" class="footer-link">Savour</a>
+      <a href="/pages-frames/" class="footer-link">Pages & Frames</a>
+      <a href="/in-motion/" class="footer-link">In Motion</a>
+    </nav>
+
+    <div class="footer-right">
+      <a
+        href="https://www.instagram.com/senorita.xi/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-ig"
+      >
+        @senorita.xi
+      </a>
+      <span class="footer-copy">© {year}</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--cream);
+    padding-block: 2rem;
+    background-color: var(--ivory);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .footer-xi {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--sienna);
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-style: italic;
+    color: var(--mist);
+  }
+
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--mist);
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover { color: var(--ink); }
+
+  .footer-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .footer-ig {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--sage);
+    transition: color 0.2s;
+  }
+
+  .footer-ig:hover { color: var(--sienna); }
+
+  .footer-copy {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--cream);
+  }
+
+  @media (max-width: 640px) {
+    .footer-right { margin-left: 0; }
+    .footer-inner { gap: 1.25rem; }
+  }
+</style>

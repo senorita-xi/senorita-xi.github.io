@@ -1,0 +1,165 @@
+---
+/*
+  INSTAGRAM INTEGRATION — Behold.io
+  ─────────────────────────────────────────────────────────────────
+  To activate the live Instagram grid:
+  1. Go to https://behold.so and create a free account
+  2. Connect your Instagram account (@senorita.xi)
+  3. Create a new widget → choose "Grid" layout → set columns to 3
+  4. Copy the "Feed ID" (looks like: "XXXXXXXXXXXXXXXX")
+  5. Replace BEHOLD_FEED_ID below with your actual ID
+  6. Uncomment the widget script + tag lines
+
+  The free plan shows the latest posts and refreshes automatically.
+  ─────────────────────────────────────────────────────────────────
+*/
+
+const BEHOLD_FEED_ID = ''; // ← paste your Behold Feed ID here
+const showWidget = BEHOLD_FEED_ID.length > 0;
+---
+
+<section class="instagram-section reveal">
+  <div class="container">
+    <div class="ig-header">
+      <div class="ig-title-group">
+        <span class="ig-eyebrow">Follow Along</span>
+        <a
+          href="https://www.instagram.com/senorita.xi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ig-handle"
+        >
+          @senorita.xi
+        </a>
+      </div>
+      <a
+        href="https://www.instagram.com/senorita.xi/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="view-all"
+      >
+        View on Instagram
+      </a>
+    </div>
+
+    {showWidget ? (
+      <!-- Behold.io live widget -->
+      <div class="behold-wrap">
+        <behold-widget feed-id={BEHOLD_FEED_ID}></behold-widget>
+      </div>
+      <script src="https://w.behold.so/widget.js" type="module"></script>
+    ) : (
+      <!-- Static placeholder grid — replace with Behold.io widget (see comment above) -->
+      <div class="ig-placeholder-grid">
+        {Array.from({ length: 9 }).map((_, i) => (
+          <a
+            href="https://www.instagram.com/senorita.xi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ig-placeholder-cell"
+            aria-label={`Instagram post ${i + 1}`}
+          >
+            <div class="ig-placeholder-img">
+              <span class="ig-xi">ξ</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .instagram-section {
+    padding-block: clamp(3rem, 6vw, 5rem);
+    background-color: var(--cream);
+  }
+
+  .ig-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .ig-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ig-eyebrow {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mist);
+  }
+
+  .ig-handle {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-style: italic;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+
+  .ig-handle:hover { color: var(--sienna); }
+
+  /* ── Placeholder grid ── */
+  .ig-placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .ig-placeholder-cell {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .ig-placeholder-img {
+    width: 100%;
+    height: 100%;
+    background-color: var(--ivory);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+
+  .ig-placeholder-cell:hover .ig-placeholder-img {
+    background-color: var(--cream);
+  }
+
+  .ig-xi {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-style: italic;
+    color: var(--cream);
+    transition: color 0.3s, transform 0.3s;
+    user-select: none;
+  }
+
+  .ig-placeholder-cell:hover .ig-xi {
+    color: var(--sienna);
+    transform: scale(1.1);
+  }
+
+  /* ── Behold widget container ── */
+  .behold-wrap {
+    width: 100%;
+  }
+
+  .behold-wrap behold-widget {
+    --behold-border-radius: 0px;
+    --behold-gap: 4px;
+  }
+
+  @media (max-width: 540px) {
+    .ig-placeholder-grid { gap: 2px; }
+  }
+</style>

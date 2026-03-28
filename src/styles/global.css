@@ -1,0 +1,199 @@
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --ivory:  #F7F4EF;
+  --ink:    #1A1612;
+  --sienna: #C4856A;
+  --sage:   #7A8C7E;
+  --cream:  #EDE8DF;
+  --mist:   #9E9890;
+  --white:  #FFFFFF;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Lora', Georgia, serif;
+  --font-label:   'Cormorant SC', Georgia, serif;
+
+  --max-w:    1100px;
+  --nav-h:    64px;
+  --gap:      clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ─── Grain overlay ──────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.625rem); }
+
+p { margin-bottom: 1.25em; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up {
+  animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.2s; }
+.fade-up-3 { animation-delay: 0.3s; }
+.fade-up-4 { animation-delay: 0.45s; }
+.fade-up-5 { animation-delay: 0.6s; }
+
+/* ─── Divider ─────────────────────────────────────────────────── */
+.rule {
+  border: none;
+  border-top: 1px solid var(--cream);
+  margin-block: 0;
+}
+
+/* ─── Prose (single post body) ───────────────────────────────── */
+.prose {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--ink);
+  max-width: 68ch;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prose p { margin-bottom: 1.4em; }
+
+.prose blockquote {
+  border-left: 2px solid var(--sienna);
+  padding-left: 1.5rem;
+  margin: 2em 0;
+  font-style: italic;
+  color: var(--mist);
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.4em;
+}
+
+.prose li { margin-bottom: 0.4em; }
+
+.prose a {
+  color: var(--sienna);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s;
+}
+.prose a:hover { text-decoration-color: var(--sienna); }
+
+/* ─── Scroll reveal via Intersection Observer ───────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── View all link ──────────────────────────────────────────── */
+.view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-label);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  color: var(--mist);
+  text-transform: uppercase;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.view-all::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+
+.view-all:hover {
+  color: var(--sienna);
+  gap: 0.65rem;
+}
+
+/* ─── Responsive helpers ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  h1 { font-size: clamp(2rem, 10vw, 2.75rem); }
+}

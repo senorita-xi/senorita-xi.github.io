@@ -1,0 +1,137 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CategorySection from '@/components/CategorySection.astro';
+import InstagramGrid from '@/components/InstagramGrid.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch latest 3 posts from each collection
+const footprints   = (await getCollection('footprints',   ({ data }) => !data.draft)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const savour       = (await getCollection('savour',       ({ data }) => !data.draft)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const pagesFrames  = (await getCollection('pages-frames', ({ data }) => !data.draft)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const inMotion     = (await getCollection('in-motion',    ({ data }) => !data.draft)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-xi fade-up">ξ</div>
+        <h1 class="hero-title fade-up fade-up-1">
+          Chasing<br /><em>Wanderlust</em>
+        </h1>
+        <div class="hero-rule fade-up fade-up-2"></div>
+        <p class="hero-sub fade-up fade-up-3">
+          Wandering the world, one bite, book & mile at a time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Sections -->
+  <div class="container">
+    <CategorySection
+      number="01"
+      label="Footprints"
+      href="/footprints/"
+      posts={footprints}
+    />
+    <CategorySection
+      number="02"
+      label="Savour"
+      href="/savour/"
+      posts={savour}
+    />
+    <CategorySection
+      number="03"
+      label="Pages & Frames"
+      href="/pages-frames/"
+      posts={pagesFrames}
+    />
+    <CategorySection
+      number="04"
+      label="In Motion"
+      href="/in-motion/"
+      posts={inMotion}
+    />
+  </div>
+
+  <!-- Instagram -->
+  <InstagramGrid />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: clamp(4rem, 10vw, 8rem);
+    border-bottom: 1px solid var(--cream);
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+  }
+
+  .hero-xi {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 14vw, 11rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1;
+    user-select: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--sienna);
+  }
+
+  .hero-rule {
+    width: clamp(3rem, 8vw, 6rem);
+    height: 1px;
+    background-color: var(--sienna);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-style: italic;
+    color: var(--mist);
+    max-width: 38ch;
+    line-height: 1.65;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 640px) {
+    .hero-xi {
+      position: static;
+      transform: none;
+      font-size: clamp(3.5rem, 20vw, 6rem);
+      margin-bottom: -1rem;
+      color: var(--cream);
+    }
+  }
+</style>
