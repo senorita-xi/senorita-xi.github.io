@@ -30,6 +30,16 @@ const formattedDate = pubDate.toLocaleDateString(locale, {
 
 <BaseLayout lang={lang} title={`${title} — ξ Chasing Wanderlust`} description={description} image={coverImage} showHero={false}>
   <article class="post-page">
+    <!-- Hero image -->
+    <div class="post-hero fade-up fade-up-1">
+      <img
+        src={coverImage}
+        alt={title}
+        class="post-hero-image"
+        width="1200"
+        height="630"
+      />
+    </div>
 
     <!-- Header: breadcrumb + title + meta -->
     <div class="container post-header fade-up">
@@ -49,17 +59,6 @@ const formattedDate = pubDate.toLocaleDateString(locale, {
 
       <h1 class="post-title">{title}</h1>
       <p class="post-description">{description}</p>
-    </div>
-
-    <!-- Hero image -->
-    <div class="post-hero fade-up fade-up-1">
-      <img
-        src={coverImage}
-        alt={title}
-        class="post-hero-image"
-        width="1200"
-        height="630"
-      />
     </div>
 
     <!-- Body -->
