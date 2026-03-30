@@ -63,6 +63,8 @@ We didn't go up to the fortress because we had limited time and decided to admir
 ## Next stop - Balos Beach
 
 Here we are at the magical place, hidden as if at the end of the world, welcoming with its silence and breathtaking beauty, its azure coast, electric blue, purity, and virginity.
+![Crystal clear water at Balos Lagoon](/balos.avif)
+
 Similar to Elafonisi, the beach is surrounded on both sides by the sea - on one side, where we arrived, the water is cold and deep, and on the other side, you can enjoy a real jacuzzi in nature, with a landscape of rocks and the smell of the sea
 
 
