@@ -2,7 +2,7 @@
 title: "Balos beach "
 pubDate: 2026-03-29
 description: "Balos Beach or the Reward of Being Wild"
-coverImage: "/balos.jpg"
+coverImage: "/baloscut3.jpg"
 coverAlt: "A beautiful view of Balos beach"
 category: footprints
 location: "Crete, Greece"
