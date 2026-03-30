@@ -9,79 +9,84 @@ const t = useTranslations(lang);
 const pathname = Astro.url.pathname;
 
 const nav = [
-  { key: 'nav.footprints',  slug: 'footprints'   },
-  { key: 'nav.savour',      slug: 'savour'        },
-  { key: 'nav.pagesFrames', slug: 'pages-frames'  },
-  { key: 'nav.inMotion',    slug: 'in-motion'     },
-  { key: 'nav.contacts',    slug: 'contacts'      },
+  { key: 'nav.home',       slug: '',            exact: true  },
+  { key: 'nav.footprints', slug: 'footprints',  exact: false },
+  { key: 'nav.savour',     slug: 'savour',      exact: false },
+  { key: 'nav.pagesFrames',slug: 'pages-frames',exact: false },
+  { key: 'nav.inMotion',   slug: 'in-motion',   exact: false },
+  { key: 'nav.contacts',   slug: 'contacts',    exact: false },
 ] as const;
 
-function isActive(slug: string) {
-  const href = localHref(`/${slug}/`, lang);
-  return pathname === href || pathname.startsWith(href);
+function navHref(slug: string) {
+  return slug === '' ? localHref('/', lang) : localHref(`/${slug}/`, lang);
 }
 
-// Language switcher: toggle between /bg/... and /...
-const otherLang: Lang = lang === 'en' ? 'bg' : 'en';
+function isActive(slug: string, exact: boolean) {
+  const href = navHref(slug);
+  return exact ? pathname === href : (pathname === href || pathname.startsWith(href));
+}
+
+// Language switcher: toggle between BG (default, /) and EN (/en/)
+const otherLang: Lang = lang === 'bg' ? 'en' : 'bg';
 let switchHref: string;
 if (lang === 'bg') {
-  // Strip /bg prefix
-  const stripped = pathname.replace(/^\/bg/, '') || '/';
-  switchHref = stripped;
+  // BG → EN: add /en prefix
+  switchHref = pathname === '/' ? '/en/' : `/en${pathname}`;
 } else {
-  // Add /bg prefix
-  switchHref = `/bg${pathname === '/' ? '' : pathname}`;
-  if (switchHref === '/bg') switchHref = '/bg/';
+  // EN → BG: strip /en prefix
+  const stripped = pathname.replace(/^\/en/, '') || '/';
+  switchHref = stripped;
 }
 ---
 
 <header class="site-header">
-  <div class="container header-inner">
+  <div class="container">
 
-    <a href={localHref('/', lang)} class="site-logo" aria-label="ξ Chasing Wanderlust — home">
-      <span class="xi-mark">ξ</span>
-    </a>
+    <!-- Top row: nav (left) + lang switch (right) -->
+    <div class="header-top">
+      <nav class="site-nav" aria-label="Main navigation">
+        {nav.map(({ key, slug, exact }) => (
+          <a
+            href={navHref(slug)}
+            class:list={['nav-link', { active: isActive(slug, exact) }]}
+          >
+            {t(key)}
+          </a>
+        ))}
+      </nav>
 
-    <nav class="site-nav" aria-label="Main navigation">
-      {nav.map(({ key, slug }) => (
-        <a
-          href={localHref(`/${slug}/`, lang)}
-          class:list={['nav-link', { active: isActive(slug) }]}
-        >
-          {t(key)}
-        </a>
-      ))}
-    </nav>
-
-    <div class="header-right">
-      <!-- Language switcher -->
       <a href={switchHref} class="lang-switch" aria-label={`Switch to ${otherLang === 'bg' ? 'Bulgarian' : 'English'}`}>
-        <span class:list={['lang-opt', { 'lang-active': lang === 'en' }]}>EN</span>
-        <span class="lang-sep">·</span>
         <span class:list={['lang-opt', { 'lang-active': lang === 'bg' }]}>BG</span>
+        <span class="lang-sep">·</span>
+        <span class:list={['lang-opt', { 'lang-active': lang === 'en' }]}>EN</span>
       </a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <!-- Mobile toggle -->
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <!-- Brand masthead -->
+    <a href={localHref('/', lang)} class="header-brand" aria-label="ξ Chasing Wanderlust — home">
+      <span class="brand-xi">ξ</span>
+      <span class="brand-chasing">Chasing</span>
+      <span class="brand-wanderlust">Wanderlust</span>
+    </a>
+
+    <hr class="header-rule" />
   </div>
 
   <!-- Mobile nav -->
   <div class="mobile-nav" id="mobile-nav" hidden>
     <div class="container">
-      {nav.map(({ key, slug }) => (
+      {nav.map(({ key, slug, exact }) => (
         <a
-          href={localHref(`/${slug}/`, lang)}
-          class:list={['mobile-nav-link', { active: isActive(slug) }]}
+          href={navHref(slug)}
+          class:list={['mobile-nav-link', { active: isActive(slug, exact) }]}
         >
           {t(key)}
         </a>
       ))}
-      <a href="https://www.instagram.com/senorita.xi/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link ig-mobile">
-        @senorita.xi
-      </a>
       <div class="mobile-lang">
         <a href={switchHref} class="mobile-lang-switch">
           {otherLang === 'bg' ? 'Български' : 'English'}
@@ -96,32 +101,32 @@ if (lang === 'bg') {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(254, 252, 248, 0.92);
+    background-color: rgba(254, 252, 248, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--cream);
-    height: var(--nav-h);
   }
 
-  .header-inner {
+  .container { padding-top: 0; padding-bottom: 0; }
+
+  .header-top {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    height: 100%;
+    padding-block: 0.6rem;
   }
 
-  .site-logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
-  .xi-mark { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; font-style: italic; color: var(--ink); line-height: 1; transition: color 0.2s; }
-  .site-logo:hover .xi-mark { color: var(--accent); }
-
-  .site-nav { display: flex; align-items: center; gap: 0.1rem; margin-left: auto; }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
 
   .nav-link {
     font-family: var(--font-label);
     font-size: 0.8125rem;
     letter-spacing: 0.06em;
     color: var(--mist);
-    padding: 0.35rem 0.65rem;
+    padding: 0.3rem 0.6rem;
     position: relative;
     transition: color 0.2s;
     white-space: nowrap;
@@ -131,8 +136,8 @@ if (lang === 'bg') {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0.65rem;
-    right: 0.65rem;
+    left: 0.6rem;
+    right: 0.6rem;
     height: 1px;
     background-color: var(--accent);
     transform: scaleX(0);
@@ -143,14 +148,6 @@ if (lang === 'bg') {
   .nav-link:hover, .nav-link.active { color: var(--ink); }
   .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
 
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-left: 0.75rem;
-    flex-shrink: 0;
-  }
-
   /* Language switcher */
   .lang-switch {
     display: flex;
@@ -158,6 +155,8 @@ if (lang === 'bg') {
     gap: 0.3rem;
     text-decoration: none;
     padding: 0.25rem 0;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .lang-opt {
@@ -175,12 +174,57 @@ if (lang === 'bg') {
 
   .lang-switch:hover .lang-opt:not(.lang-active) { color: var(--ink); }
 
-  .lang-sep {
-    font-size: 0.6rem;
-    color: var(--cream);
+  .lang-sep { font-size: 0.6rem; color: var(--cream); }
+
+  /* Brand masthead */
+  .header-brand {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-bottom: 0.6rem;
+    font-family: var(--font-display);
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
 
-  .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.5rem; margin-left: 0.25rem; }
+  .brand-xi {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--accent);
+    margin-right: 0.2em;
+  }
+
+  .brand-chasing {
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--mist);
+    margin-right: 0.2em;
+  }
+
+  .brand-wanderlust {
+    font-size: 1.125rem;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .header-rule {
+    border: none;
+    border-top: 1px solid var(--cream);
+  }
+
+  /* Mobile */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+  }
   .menu-toggle span { display: block; width: 22px; height: 1.5px; background-color: var(--ink); transition: transform 0.25s, opacity 0.25s; }
   .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
@@ -191,13 +235,12 @@ if (lang === 'bg') {
   .mobile-nav-link { font-family: var(--font-label); font-size: 0.9rem; letter-spacing: 0.06em; color: var(--mist); padding: 0.5rem 0; border-bottom: 1px solid var(--cream); transition: color 0.2s; }
   .mobile-nav-link:last-of-type { border-bottom: none; }
   .mobile-nav-link:hover, .mobile-nav-link.active { color: var(--accent); }
-  .ig-mobile { color: var(--sage); }
 
   .mobile-lang { padding-top: 0.75rem; }
   .mobile-lang-switch { font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); text-decoration: none; text-transform: uppercase; }
 
   @media (max-width: 820px) {
-    .site-nav, .header-right { display: none; }
+    .site-nav, .lang-switch { display: none; }
     .menu-toggle { display: flex; margin-left: auto; }
   }
 </style>

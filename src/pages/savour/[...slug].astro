@@ -1,11 +1,13 @@
 ---
 import PostLayout from '@/layouts/PostLayout.astro';
 import { getCategoryPaths } from '@/i18n/paths';
+import { useTranslations } from '@/i18n/utils';
 
 export async function getStaticPaths() {
-  return getCategoryPaths('savour', 'en');
+  return getCategoryPaths('savour', 'bg');
 }
 
+const t = useTranslations('bg');
 const { post, isFallback } = Astro.props;
 const { Content } = await post.render();
 ---
@@ -18,8 +20,8 @@ const { Content } = await post.render();
   category={post.data.category}
   location={post.data.location}
   categoryHref="/savour/"
-  categoryLabel="Savour"
-  lang="en"
+  categoryLabel={t('nav.savour')}
+  lang="bg"
   isFallback={isFallback}
 >
   <Content />

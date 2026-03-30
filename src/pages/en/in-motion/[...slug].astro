@@ -4,10 +4,10 @@ import { getCategoryPaths } from '@/i18n/paths';
 import { useTranslations } from '@/i18n/utils';
 
 export async function getStaticPaths() {
-  return getCategoryPaths('pages-frames', 'bg');
+  return getCategoryPaths('in-motion', 'en');
 }
 
-const t = useTranslations('bg');
+const t = useTranslations('en');
 const { post, isFallback } = Astro.props;
 const { Content } = await post.render();
 ---
@@ -19,9 +19,9 @@ const { Content } = await post.render();
   pubDate={post.data.pubDate}
   category={post.data.category}
   location={post.data.location}
-  categoryHref="/bg/pages-frames/"
-  categoryLabel={t('nav.pagesFrames')}
-  lang="bg"
+  categoryHref="/en/in-motion/"
+  categoryLabel={t('nav.inMotion')}
+  lang="en"
   isFallback={isFallback}
 >
   <Content />

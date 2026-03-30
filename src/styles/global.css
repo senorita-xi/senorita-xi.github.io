@@ -157,6 +157,23 @@ img {
 }
 .prose a:hover { text-decoration-color: var(--accent); }
 
+.prose img,
+.prose video {
+  max-width: 100%;
+  height: auto;
+  margin-block: 2em;
+}
+
+.prose figure { margin-block: 2em; }
+
+.prose figcaption {
+  font-size: 0.8125rem;
+  color: var(--mist);
+  font-style: italic;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
 /* ─── Scroll reveal via Intersection Observer ───────────────── */
 .reveal {
   opacity: 0;
