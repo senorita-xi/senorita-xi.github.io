@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   image?: string;
   lang?: Lang;
+  tagline?: string;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description = 'Wandering the world, one bite, book & mile at a time.',
   image = '/og-default.jpg',
   lang = 'en',
+  tagline,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -51,6 +53,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <Header lang={lang} />
+    <section class="site-hero">
+      <div class="container">
+        <div class="site-hero-content">
+          <h1 class="site-hero-title">
+            <span class="line-xi fade-up">ξ</span>
+            <span class="line-chasing fade-up fade-up-1">Chasing</span>
+            <span class="line-wanderlust fade-up fade-up-2">Wanderlust</span>
+          </h1>
+          <div class="hero-rule fade-up fade-up-3"></div>
+          {tagline && <p class="hero-sub fade-up fade-up-4">{tagline}</p>}
+        </div>
+      </div>
+    </section>
     <main>
       <slot />
     </main>
@@ -73,3 +88,68 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </script>
   </body>
 </html>
+
+<style>
+  .site-hero {
+    padding-block: clamp(3rem, 7vw, 6rem);
+  }
+
+  .site-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
+  }
+
+  .line-xi {
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-style: italic;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.1em;
+  }
+
+  .line-chasing {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--mist);
+    margin-bottom: 0.05em;
+  }
+
+  .line-wanderlust {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+  }
+
+  .hero-rule {
+    width: clamp(2.5rem, 6vw, 4.5rem);
+    height: 1px;
+    background-color: var(--accent);
+    margin-bottom: 1.25rem;
+    opacity: 0.5;
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+    font-style: italic;
+    color: var(--mist);
+    max-width: 40ch;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+</style>

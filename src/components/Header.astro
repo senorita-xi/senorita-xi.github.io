@@ -66,13 +66,6 @@ if (lang === 'bg') {
       </button>
     </div>
 
-    <!-- Brand masthead -->
-    <a href={localHref('/', lang)} class="header-brand" aria-label="ξ Chasing Wanderlust — home">
-      <span class="brand-xi">ξ</span>
-      <span class="brand-chasing">Chasing</span>
-      <span class="brand-wanderlust">Wanderlust</span>
-    </a>
-
     <hr class="header-rule" />
   </div>
 
@@ -111,7 +104,7 @@ if (lang === 'bg') {
   .header-top {
     display: flex;
     align-items: center;
-    padding-block: 0.6rem;
+    padding-block: 0.75rem;
   }
 
   .site-nav {
@@ -175,39 +168,6 @@ if (lang === 'bg') {
   .lang-switch:hover .lang-opt:not(.lang-active) { color: var(--ink); }
 
   .lang-sep { font-size: 0.6rem; color: var(--cream); }
-
-  /* Brand masthead */
-  .header-brand {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    padding-bottom: 0.6rem;
-    font-family: var(--font-display);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .brand-xi {
-    font-size: 1.125rem;
-    font-style: italic;
-    color: var(--accent);
-    margin-right: 0.2em;
-  }
-
-  .brand-chasing {
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
-    color: var(--mist);
-    margin-right: 0.2em;
-  }
-
-  .brand-wanderlust {
-    font-size: 1.125rem;
-    font-style: italic;
-    font-weight: 700;
-    color: var(--ink);
-  }
 
   .header-rule {
     border: none;
