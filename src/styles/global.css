@@ -162,6 +162,8 @@ img {
   max-width: 100%;
   height: auto;
   margin-block: 2em;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .prose figure { margin-block: 2em; }
