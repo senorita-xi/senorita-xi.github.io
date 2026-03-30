@@ -9,6 +9,21 @@ location: "Crete, Greece"
 tags: [beach, lagoon, balos]
 ---
 <div style="text-align: justify;">
+<style is:global>
+  /* Target all images and videos inside your blog post */
+  .post-page img, 
+  .post-page video {
+    border-radius: 20px; /* Adjust this number: 8px is subtle, 30px is very round */
+    overflow: hidden;    /* Ensures the video content doesn't "leak" past the rounded corner */
+    margin-bottom: 1.5rem; /* Adds nice spacing below every image/video */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Optional: adds a soft "lift" to the photos */
+  }
+
+  /* Specifically for the big cover image if you want it extra rounded */
+  .post-hero-image {
+    border-radius: 24px !important;
+  }
+</style>
 <div style="text-align: justify;">
 Remember those wild beaches in the middle of nowhere, with fine, white sand and crystal blue water? That pure love between the vast blue touching the hot sand... And no, it's not thousands of kilometers from here, just a step away. We stretch and imperceptibly the almost snow-white grains of sand slip between our hands, and the salt from our Mediterranean embrace with the turquoise sea is stuck on our feet. Here we are - on Balos, which we can reach with only an hour and a half flight and another hour or two "amphibious" and breath-taking with its amazing views to the lagoon, nestled in one of the westernmost points of the island of Crete.
 </div>
@@ -76,7 +91,12 @@ There was an opportunity to rent an umbrella and a sunbed, but almost everything
 Like all good things, time flew by and the ship arrived. Our stay on Balos was about 3 hours.
 
 On our way out, we encountered an unexpected and kind resident:
-![Crystal clear water at Balos Lagoon](/koza.jpg)
+<!-- ![Crystal clear water at Balos Lagoon](/koza.jpg) -->
+
+<img 
+  src="/koza.jpg" 
+  style="width: 100%; min-width: 120px; max-width: 300px; display: block; margin: 20px auto; border-radius: 20px;" 
+/>
 
 Is this Amalthea - the nymph who nursed Zeus, isn't it?  🤔
 </div>
