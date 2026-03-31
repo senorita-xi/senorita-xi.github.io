@@ -13,9 +13,9 @@ export function useTranslations(lang: Lang) {
   };
 }
 
-/** Prefix a root-relative href with /bg for Bulgarian, leave bare for English. */
+/** Prefix a root-relative href with /en for English, leave bare for Bulgarian (default). */
 export function localHref(href: string, lang: Lang): string {
-  return lang === 'bg' ? `/bg${href}` : href;
+  return lang === 'en' ? `/en${href}` : href;
 }
 
 /** Convert a category name key to its URL slug. */

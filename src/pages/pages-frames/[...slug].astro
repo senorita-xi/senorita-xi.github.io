@@ -1,11 +1,13 @@
 ---
 import PostLayout from '@/layouts/PostLayout.astro';
 import { getCategoryPaths } from '@/i18n/paths';
+import { useTranslations } from '@/i18n/utils';
 
 export async function getStaticPaths() {
-  return getCategoryPaths('pages-frames', 'en');
+  return getCategoryPaths('pages-frames', 'bg');
 }
 
+const t = useTranslations('bg');
 const { post, isFallback } = Astro.props;
 const { Content } = await post.render();
 ---
@@ -18,8 +20,8 @@ const { Content } = await post.render();
   category={post.data.category}
   location={post.data.location}
   categoryHref="/pages-frames/"
-  categoryLabel="Pages & Frames"
-  lang="en"
+  categoryLabel={t('nav.pagesFrames')}
+  lang="bg"
   isFallback={isFallback}
 >
   <Content />

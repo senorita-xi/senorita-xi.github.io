@@ -6,10 +6,10 @@ export default defineConfig({
   // base: '/xi_blog',  // Uncomment if deploying to a project page (not user page)
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'bg'],
+    defaultLocale: 'bg',
+    locales: ['bg', 'en'],
     routing: {
-      prefixDefaultLocale: false,  // English at /, Bulgarian at /bg/
+      prefixDefaultLocale: false,  // Bulgarian at /, English at /en/
     },
   },
 });

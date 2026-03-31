@@ -8,6 +8,7 @@ export const languages = {
 export const ui = {
   en: {
     // ── Navigation ────────────────────────────────────
+    'nav.home':        'Home',
     'nav.footprints':  'Footprints',
     'nav.savour':      'Savour',
     'nav.pagesFrames': 'Pages & Frames',
@@ -45,6 +46,7 @@ export const ui = {
 
   bg: {
     // ── Navigation ────────────────────────────────────
+    'nav.home':        'Начало',
     'nav.footprints':  'Следи',
     'nav.savour':      'Вкус',
     'nav.pagesFrames': 'Страници и Кадри',
