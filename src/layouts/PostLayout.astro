@@ -76,6 +76,31 @@ const formattedDate = pubDate.toLocaleDateString(locale, {
   </article>
 </BaseLayout>
 
+<script>
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  const lb = document.createElement('img');
+  overlay.appendChild(lb);
+  document.body.appendChild(overlay);
+
+  document.querySelectorAll('.prose img').forEach((el) => {
+    (el as HTMLElement).style.cursor = 'zoom-in';
+    el.addEventListener('click', () => {
+      lb.src = (el as HTMLImageElement).src;
+      lb.alt = (el as HTMLImageElement).alt;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const close = () => {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  overlay.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+</script>
+
 <style>
   .post-page {
     padding-bottom: clamp(3rem, 8vw, 6rem);
