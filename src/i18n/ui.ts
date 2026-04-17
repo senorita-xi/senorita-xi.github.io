@@ -37,9 +37,9 @@ export const ui = {
     // ── Connect page ──────────────────────────────────
     'connect.desc':              'Find me across the internet.',
     'connect.intro':             'Follow along on the platforms where I share the most.',
-    'connect.ig.note':           'Daily stories, travel snapshots & food moments.',
-    'connect.strava.note':       'Running logs, routes & fitness milestones.',
-    'connect.yt.note':           'Videos, travel vlogs & longer stories.',
+    'connect.ig.note':           'Daily stories, travel snapshots & active lifestyle.',
+    'connect.strava.note':       'Cycling logs, ski routes & fitness milestones.',
+    'connect.yt.note':           'My food channel - homemade, delicious and healthy recipes.',
     'connect.follow':            'Follow',
     'connect.subscribe':         'Subscribe',
   },
@@ -47,11 +47,11 @@ export const ui = {
   bg: {
     // ── Navigation ────────────────────────────────────
     'nav.home':        'Начало',
-    'nav.footprints':  'Следи',
-    'nav.savour':      'Вкус',
-    'nav.pagesFrames': 'Страници и Кадри',
+    'nav.footprints':  'Пътешествия',
+    'nav.savour':      'Сетива',
+    'nav.pagesFrames': 'Страници и кадри',
     'nav.inMotion':    'В Движение',
-    'nav.contacts':    'Свържи се',
+    'nav.contacts':    'Да станем приятели',
 
     // ── Home ──────────────────────────────────────────
     'home.tagline': 'Скитам по света — хапка по хапка, книга по книга, миля по миля.',

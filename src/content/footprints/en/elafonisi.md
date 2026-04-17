@@ -1,15 +1,15 @@
 ---
 title: "The Pinky Winky Beach"
 pubDate: 2026-03-29
-description: "Balos Beach or the Reward of Being Wild"
+description: "Elafonisi beach - the pink paradise "
 coverImage: "/baloscut3.jpg"
-coverAlt: "A beautiful view of Balos beach"
+coverAlt: "A beautiful view of Elafonissi beach"
 category: footprints
 location: "Crete, Greece"
 tags: [beach, lagoon, elafonisi, pink sand, crete]
 ---
 
-Have you seen the photos of these unreal pinky beaches on Instagram? Have you ever think they are photoshopped? Of course, you have. To be honest, me too. But let me tell you one secret - not all the photos are photoshopped and not necessary. Come with me to one of the Top 25 beaches according to TripAdvisor. 
+Have you seen the photos of these unreal pinky beaches on Instagram? Have you ever think they are photoshopped? Of course, you have. To be honest, me too. But let me tell you one secret - not all the photos are photoshopped and not necessary. Come with me to one of the Top 25 beaches according to [TripAdvisor]((https://share.google/vdNYOyJJe2wIPOUKO)
 
 ## How do we get there?
 
