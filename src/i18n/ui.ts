@@ -13,7 +13,7 @@ export const ui = {
     'nav.savour':      'Savour',
     'nav.pagesFrames': 'Pages & Frames',
     'nav.inMotion':    'In Motion',
-    'nav.contacts':    'Connect',
+    'nav.contacts':    "Let's Be Friends",
 
     // ── Home ──────────────────────────────────────────
     'home.tagline': 'Wandering the world, one bite, book & mile at a time.',
