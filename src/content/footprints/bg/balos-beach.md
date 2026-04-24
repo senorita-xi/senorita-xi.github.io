@@ -1,7 +1,7 @@
 ---
 title: "Балос или наградата да бъдеш див"
 pubDate: 2026-03-29
-description: "Плажът Балос или наградата да бъдеш див"
+description: "Плажът Балос - дивото зове"
 coverImage: "/baloscut3.jpg"
 coverAlt: "A beautiful view of Balos beach"
 category: footprints

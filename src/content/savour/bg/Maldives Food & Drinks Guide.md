@@ -1,7 +1,7 @@
 ---
 title: "Топ ресторанти, храни и напитки, които да не пропускаме на остров Укулас"
 pubDate: 2026-03-01
-description: "Why I keep going back to the same tiny counter on a Tuesday, and what makes a bowl truly great."
+description: "Най-добрите ресторанти и най-интересните храни и напитки, които да опитате на острова"
 coverImage: "/lovetoeat.jpg"
 category: savour
 location: "Ukulhas, Maldives"
