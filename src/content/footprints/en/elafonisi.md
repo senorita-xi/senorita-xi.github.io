@@ -51,9 +51,13 @@ The most wanted pink sand... Well, there is such! It's not at the whole beach, t
 
 The beach is surrounded by water from both sides - the one side is with normal depth, crystal clear water, and underwater reefs which are extremely beautiful. 
 ![End of road view](/me_elafonisi.avif)
+
 The other side is very swallowed with warmer water in which you could lay for hours 😁And you could walk to the rocks in the middle(for perfect Instagramable frames). 
+
 ![End of road view](/other_side.avif)
+
 And I know that the most impressive thing about Elafonisi is the pink sand, so let me show you more of it:
+
 <video width="100%" controls>
   <source src="/IMG_1808.MOV" type="video/mp4">
   Your browser does not support the video tag.
