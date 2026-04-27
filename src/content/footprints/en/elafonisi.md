@@ -1,7 +1,7 @@
 ---
 title: "The Pinky Winky Beach"
 pubDate: 2026-03-29
-description: "Elafonisi beach - the pink paradise "
+description: "Елафониси - розовият рай "
 coverImage: "/Me_elafonisi.jpg"
 coverAlt: "A beautiful view of Elafonissi beach"
 category: footprints
