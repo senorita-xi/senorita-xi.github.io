@@ -9,13 +9,15 @@ location: "Crete, Greece"
 tags: [beach, lagoon, balos]
 ---
 
-Remember those wild beaches in the middle of nowhere, with fine, white sand and crystal blue water? That pure love between the vast blue touching the hot sand... And no, it's not thousands of kilometers from here, just a step away. We stretch and imperceptibly the almost snow-white grains of sand slip between our hands, and the salt from our Mediterranean embrace with the turquoise sea is stuck on our feet. Here we are — on Balos, which we can reach with only an hour and a half flight and another hour or two "amphibious" and breath-taking with its amazing views to the lagoon, nestled in one of the westernmost points of the island of Crete.
+Do you remember those wild beaches in the middle of nowhere, with fine, white sand and crystal blue water? That pure love between the vast blue touching the hot sand... And no, it's not thousands of kilometers from here, just a step away. We stretch out, the almost snow-white grains of sand slip through our fingers, and the salt of our Mediterranean embrace with the turquoise sea dries on our feet. Here we are — at Balos, just an hour-and-a-half flight away, plus another hour or two of an "amphibious", breathtaking journey to the lagoon, nestled in one of the westernmost points of the island of Crete.
 
 ## How do we get there?
 
+It's not complicated at all. We set off from Chania.
+
 ### *By land*
 
-With a quick check on Google Maps we can see that the distance is only about 50 km and is accessible in just over an hour. But honestly, I wouldn't recommend this option. From a certain point on, the road becomes black — stony, sandy, and very narrow. And it can't take you directly to the beach: from the nearest parking lot above Balos (yes, it's above the lagoon), you have to walk another 20–30 minutes down stairs. The car or motorbike can be easily damaged with no possibility of repair nearby. And then there's the climb back up those same stairs at 35–40°C after a day on the beach — which doesn't sound like the most attractive option. Still, it is possible.
+With a quick check on Google Maps we can see that the distance is only about 50 km and takes just over an hour. But honestly, I wouldn't recommend this option. From a certain point on, it turns into a dirt road — stony, sandy and very narrow. And it can't take you directly to the beach: from the nearest parking lot above Balos (yes, it's above the lagoon), you have to walk another 20–30 minutes down stairs. A car or motorbike can easily be damaged with no possibility of repair nearby. And then there's the climb back up those same stairs at 35–40°C after a day on the beach — which doesn't sound like the most attractive option. Still, it is possible.
 
 ### *By bus + ferry*
 
@@ -25,7 +27,7 @@ Before leaving for Balos, we considered buying a ticket online, but weren't sure
 
 For the ferry itself: we were worried about buying tickets in advance from unknown websites (we've been burned before with the Statue of Liberty), so we bought on the spot. The 10:30 ferry was full, so we took the 12:40. There's a restaurant at the port where you can wait comfortably. I wholeheartedly recommend the ferry — for the turquoise blue, the little boats, and the wind in your hair.
 
-![Crystal clear water at Balos Lagoon](../../../assets/image.png)
+![The ferry to Balos and the turquoise water](../../../assets/image.png)
 
 <video width="100%" controls>
   <source src="/balos.mp4" type="video/mp4">
@@ -36,19 +38,19 @@ For the ferry itself: we were worried about buying tickets in advance from unkno
 
 The ferry ride includes a stop at the small, unspoiled island of Gramvousa for about an hour before continuing to Balos. If you're a history buff, you can visit the Venetian Fortress at the top — built in the 16th century during the struggle against the Ottoman Empire, and one of the last captured fortifications on Crete.
 
-![Crystal clear water at Balos Lagoon](../../../assets/fortress.avif)
+![The Venetian fortress on Gramvousa island](../../../assets/fortress.avif)
 
 If you're drawn to the sea, dive into the crystal blue waters of this magical corner of paradise. The beach starts shallow, then suddenly drops deeper — perfect for snorkelling among beautiful fauna and the remains of shipwrecks. Bring swimming goggles and water shoes: the water is extremely salty and the bottom is rocky.
 
-![Crystal clear water at Balos Lagoon](../../../assets/water.avif)
+![Crystal clear water at Gramvousa](../../../assets/water.avif)
 
-We skipped the fortress — limited time — and chose the sea instead. Time passed imperceptibly, and the final destination was already waiting.
+We skipped the fortress — limited time — and chose the sea instead. Time flew by, and the final destination was already waiting.
 
 ## Next stop — Balos Beach
 
-And here we are at the magical place, hidden as if at the end of the world, welcoming with its silence and breathtaking beauty — its azure coast, electric blue, purity, and wildness.
+And here we are at the magical place, hidden as if at the end of the world, welcoming with its silence and breathtaking beauty — its azure shore, electric blue water, purity and wildness.
 
-![Crystal clear water at Balos Lagoon](/balos.avif)
+![Balos lagoon](/balos.avif)
 
 Similar to Elafonisi, the beach is surrounded on both sides by the sea. On the side where we arrived, the water is cold and deep. On the other side, you can enjoy a real jacuzzi in nature — rocks, the smell of the sea, warm shallow pools.
 
@@ -67,7 +69,7 @@ And just like Elafonisi, there is wet pink sand — but only in patches and with
 
 There was an opportunity to rent an umbrella and a sunbed, but almost everything was taken — as expected. There's a single small kiosk on the beach, from which we only got water. We wanted to spend the time enjoying the wild and unspoiled nature, the crystal water, the scorching sun, and the incomparable beauty.
 
-Like all good things, time flew by and the ship arrived. Our stay on Balos was about three hours.
+Like all good things, time flew by and the boat arrived. Our stay on Balos was about three hours.
 
 On our way out, we encountered an unexpected and kind farewell:
 

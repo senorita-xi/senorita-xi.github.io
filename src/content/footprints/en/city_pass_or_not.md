@@ -1,34 +1,34 @@
 ---
-title: "City Pass or Not - The Logic Behind"
+title: "City Pass or Not – The Logic Behind the Choice"
 pubDate: 2026-03-29
 description: "What is the best option for you and how to save money"
 coverImage: "/citypass_2.png"
-coverAlt: "A beautiful view of Balos beach"
+coverAlt: "The best way and price to explore a new city"
 category: footprints
-location: "Crete, Greece"
-tags: [beach, lagoon, balos]
+location: "New York, USA"
+tags: [citypass, city pass, explore, travel, fares, getyourguide, pass]
 ---
 
-When you have a few days to explore a city like New York, you want to choose the best option. And then you find a lot of offers on the Internet, on the buses and a lot of people offer you City Passes, Sight-Seeing Buses and so on, and so on. So what to choose? Could you make a trade-off between money and time, between how many landmarks you wanna see and how much time you could spend and what you prefer - visit more spectacular places for a short time or spend more time on exploring a few interesting places deeply. Well, the city pass could not help you to choose what you want. You should now before take the city pass or not. Well, you could find anywhere on the web which are the best attractions in every city.
+When you have a few days to explore a city like New York, you want to choose the best option. And then you find lots of offers online and on the buses, and lots of people try to sell you City Passes, sightseeing buses and so on. So what should you choose? Can you find the right trade-off between money and time, between how many landmarks you want to see and how much time you have – and do you prefer to see more spectacular places quickly, or to spend more time exploring a few places in depth? A city pass can't decide that for you. You need to know what you want before you decide whether to buy one. You can easily find the top attractions of any city online.
 
-When we were in New York, there were a loooot place we wanted to visit. And we made a list of the top attractions. My advice is always to have in mind what you really want to visit. Then, the decision to take a City Pass or not comes to mind. Then you start searching the web if it is worth it or no, which City Pass is best and so on, and so on. Here is a little secret - if you need a City Pass or not, depends only on your decisions what exactly you want to visit. No one can tell you for sure if the City Pass will cost them amoney if it will be cheaper or more efficient. But here is how you could "calculate" alone. No, no, you don't need a Ph.D. in Math or Economics. You just need an Excel Table. 
+When we were in New York, there were sooo many places we wanted to visit. And we made a list of the top attractions. My advice is always to have in mind what you really want to visit. Then, the decision to take a City Pass or not comes to mind. Then you start searching online whether it's worth it, which City Pass is best and so on. Here's a little secret: whether you need a City Pass depends only on what exactly you want to visit. No one can tell you for sure whether a pass will save you money or be more efficient. But here's how you can "calculate" it yourself. No, no, you don't need a Ph.D. in Math or Economics. You just need an Excel Table. 
 
 
 
-Here are the few steps you have to follow before actually make the "decision table". 
-- decide what places you really want to visit and list them 
-- see what are the available City Passes for the particular city you are visiting(for New York here is the site where they are all listed - https://freetoursbyfoot.com/new-york-city-passes/) I believe there is such site for almost every city or you could explore on google. 
-- check the prices for a single visit on official sites for every attraction(which site is official is not easy to say at first sight. For example, there a site that came first to google search when you are searching for tickets for the Statue of Liberty but it is not the official one. There is no way to be absolutely sure but you could look at the site, the design, the prices and at last check in google(TripAdvisor) for the accuracy of this site, if there are any complaints about, etc. 
+Here are a few steps to follow before you make the "decision table": 
+- Decide which places you really want to visit and list them.
+- See which City Passes are available for the city you're visiting (for New York, here's a site that lists them all: https://freetoursbyfoot.com/new-york-city-passes/). I believe there's a similar site for almost every city, or you can simply google it.
+- Check the single-entry prices on the official website of each attraction. (It's not always easy to tell which site is official. For example, the first Google result for Statue of Liberty tickets is not the official one. You can never be 100% sure, but look at the site, the design and the prices, and check Google or TripAdvisor for reviews and complaints.) 
 
-Now it is time for the table. It has rows with the names of places you want to visit and columns - different options for city passes and the single prices. In the table, put 1 or 0 if you want to go to the place and it is included in the City Pass. Then calculate the City Pass price + the places you want to visit and are not included in the City Pass. Compare how much % this city pass is better than the price when visiting all the places you want on your own.
+Now it is time for the table. It has rows with the names of places you want to visit and columns - different options for city passes and the single prices. In the table, put 1 or 0 depending on whether you want to visit the place and whether it's included in the pass. Then calculate the City Pass price + the places you want to visit and are not included in the City Pass. Then compare by what percentage each pass is cheaper (or more expensive) than visiting all the places on your own.
 
 Here is an example:
-![Crystal clear water at Balos Lagoon](/citypass_excel.avif)
+![A table comparing New York city passes](/citypass_excel.avif)
 
-You can see that some options are expensive than just visit the places without a City Pass. The best option is the green one - Explorer pass, because it gives you 5.64% lower price than visiting the places alone.
+You can see that some options are more expensive than simply visiting the places without a pass. The best option is the green one - Explorer pass, because it's 5.64% cheaper than visiting the places on your own.
 
-But what a surprise - if you choose one of the New York CityPass C3, New York Pass or Sigtseeing passes, you will spend a lot more money than visit the places without City Pass.
+But what a surprise - if you choose the New York CityPass C3, the New York Pass or the Sightseeing Pass, you'll spend a lot more than without any pass.
 
-So, it depends really on what you want to visit, and because of that you should only believe on your calculations and decisions.
+So it really depends on what you want to see – which is why you should trust only your own calculations and decisions.
 
 

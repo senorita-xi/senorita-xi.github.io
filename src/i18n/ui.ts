@@ -22,7 +22,7 @@ export const ui = {
     'desc.footprints':  'Places visited, roads taken, and the moments that made them memorable.',
     'desc.savour':      'Food experiences, restaurants worth finding, and meals that linger long after the last bite.',
     'desc.pagesFrames': 'Reviews of books and films that stayed with me long after I finished them.',
-    'desc.inMotion':    'Movement, fitness, and the body in motion — running, swimming, yoga, and everything in between.',
+    'desc.inMotion':    'My biggest passion is movement — on two wheels, on skis or in the gym.',
 
     // ── UI strings ────────────────────────────────────
     'ui.viewAll':          'View all',
@@ -54,13 +54,13 @@ export const ui = {
     'nav.contacts':    'Да станем приятели',
 
     // ── Home ──────────────────────────────────────────
-    'home.tagline': 'Пътешествам по света -  хапка по хапка, книга по книга, миля по миля.',
+    'home.tagline': 'Пътешествам по света – хапка по хапка, книга по книга, миля по миля.',
 
     // ── Category descriptions ─────────────────────────
     'desc.footprints':  'Посетени места, изминати пътища и моменти, запечатани завинаги в паметта.',
     'desc.savour':      'Гастрономически преживявания и ресторанти, заслужаващи да бъдат открити.',
     'desc.pagesFrames': 'Рецензии на книги и филми, които ме следват дълго след последната страница.',
-    'desc.inMotion':    'Да се движа- най-голямата ми страст - на ски, на колела или в залата',
+    'desc.inMotion':    'Да се движа – най-голямата ми страст: на колело, на ски или в залата.',
 
     // ── UI strings ────────────────────────────────────
     'ui.viewAll':          'Виж всички',
@@ -75,7 +75,7 @@ export const ui = {
     // ── Connect page ──────────────────────────────────
     'connect.desc':              'Намери ме в интернет.',
     'connect.intro':             'Последвай ме в платформите, където споделям най-много.',
-    'connect.ig.note':           'Ежедневни истории, снимки от пътешествия, забавни моменти и много спорт',
+    'connect.ig.note':           'Ежедневни истории, снимки от пътешествия, забавни моменти и много спорт.',
     'connect.strava.note':       'Тренировъчни дневници, маршрути и фитнес постижения.',
     'connect.yt.note':           'Моят канал за здравословни, бързи и вкусни рецепти.',
     'connect.follow':            'Последвай',

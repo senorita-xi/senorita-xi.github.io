@@ -1,17 +1,17 @@
 ---
-title: "The Pinky Winky Beach"
+title: "Elafonisi – The Pink Paradise"
 pubDate: 2026-03-29
-description: "Елафониси - розовият рай "
+description: "The beautiful pink-sand beach of Elafonisi, Crete"
 coverImage: "/Me_elafonisi.jpg"
-coverAlt: "A beautiful view of Elafonissi beach"
+coverAlt: "A beautiful view of Elafonisi beach"
 category: footprints
 location: "Crete, Greece"
 tags: [beach, lagoon, elafonisi, pink sand, crete]
 ---
 
-Have you seen the photos of these unreal pinky beaches on Instagram? Have you ever think they are photoshopped? Of course, you have. To be honest, me too. But let me tell you one secret - not all the photos are photoshopped and not necessary. Come with me to one of the Top 25 beaches according to [TripAdvisor](https://share.google/vdNYOyJJe2wIPOUKO)
+Have you seen photos of those unreal pink beaches on Instagram? Have you ever thought they were photoshopped? Of course you have. To be honest, so did I. But let me tell you a secret: not all of those photos are edited, and they don't need to be. Come with me to one of the top 25 beaches in the world according to TripAdvisor.
 
-First, what causes this impressive pink color of the sand in Elafonisi? It originates from the so-called Foraminifera shellfishes, which, when they complete their life cycle, leave behind their reddish shells which are crushed in the white sand and mix with it to produce this unique pink color.
+First, what causes this impressive pink color of the sand in Elafonisi? It comes from foraminifera – tiny single-celled organisms which, at the end of their life cycle, leave behind reddish shells that get crushed and mix with the white sand to produce this unique pink color.
 
 Well, let me guide you to this amazing place.
 
@@ -19,46 +19,46 @@ Well, let me guide you to this amazing place.
 
 ### *By Car or Motorcycle*
 
-Maybe the best way to go to Elafonissi is by car or motorcycle. Keep in mind that the road is not the typical road you know. It is not a dirt road but it's very narrow and has a lot of meanders. The beach is only 73 km from Chania but taking into account the road, with a car it's about 1h 30 min and with the motorcycle 2-2h 30min. But I could say that there are views on the road which are breathtaking and it's worth it. You have the feeling that you are in Grand Canyon.
+Probably the best way to get to Elafonisi is by car or motorcycle. Keep in mind that the road is not what you're used to. It's not a dirt road, but it's very narrow, with lots of hairpin bends. The beach is only 73 km from Chania, but because of the road it takes about 1h 30min by car and 2–2h 30min by motorcycle. The views on the way are breathtaking, though, and absolutely worth it. At times you feel like you're in the Grand Canyon.
 
-![On the road](/road.avif)
+![The road to Elafonisi](/road.avif)
 
-And of course, from Chania, this is the fastest way to get to Elafonissi. There is free parking near the beach where you can leave your vehicle. 
+And of course, from Chania, this is the fastest way to get to Elafonisi. There is free parking near the beach where you can leave your vehicle. 
 
-### *By Bys* 
-And here is the best travel company I have ever seen  - [KTEL](https://www.e-ktel.com/en/). It has trips almost from every point in Crete to another. The schedule is visible online. Usually, the bus leaves early in the morning and has a couple of options. The return buses start at 4 pm. There are a lot of people usually. When we went to Balos Beach, we used first the bus and there was not enough space. 😱Luckily, a small minibus come after less than 10 minutes and we were able to catch out freeboot(more in the post about Balos).
+### *By Bus* 
+Here comes the best bus company I have ever used – [KTEL](https://www.e-ktel.com/en/). It runs buses to almost every corner of Crete worth visiting, and the timetable is online. Buses usually leave early in the morning, with a few departure times to choose from. Return buses start at 4 pm. They are usually busy: when we went to Balos, there weren't enough seats on our bus 😱 Luckily, a minibus came less than 10 minutes later and we still caught our ferry (more in the Balos post).
 
 ### *By Boat* 
-I have heard only for one option to reach Elafonissi by boat - from Paleochora. The boat leaves at 9 am and return at 5 pm. 
+I've only heard of one way to reach Elafonisi by boat – from Paleochora. The boat leaves at 9 am and returns at 5 pm. 
 
 
 ## The Beach
 
-If you decide to travel by car, it's good to know that the last 1 km the road became a dirt road. Just slowly and carefully you are ready to enjoy the pink paradise. 
+If you travel by car, note that the last kilometre is a dirt road. Drive slowly and carefully – you're almost in the pink paradise. 
 Almost there... 🤩
 
-![End of road view](/ontheroad.avif)
+![The last metres before the beach](/ontheroad.avif)
 
-The beach is full of people. The prices are normal, 10 euro for an umbrella and two sunbeds.. but it's almost impossible to find not occupied. You could always put your towels on the sand and go to the two bars when there is a shelter from the sun. The prices are normal but there is mostly fast food, drinks, and ice cream.
+The beach is crowded. Prices are reasonable – 10 euros for an umbrella and two sunbeds – but it's almost impossible to find free ones unless you arrive very early. You can always lay your towels on the sand and hide from the sun at one of the two beach bars. Their prices are fine too, but the choice is mostly snacks, drinks and ice cream.
 
-The most wanted pink sand... Well, there is such! It's not at the whole beach, the pinkiest is on the shore, close to the water and at the very shallow places. 
+And the long-awaited pink sand... it's real! It doesn't cover the whole beach – it's pinkest along the shoreline, close to the water and in the very shallow spots. 
 
 <div class="photo-grid-3">
-  <img src="/sand_1.avif" alt="Balos beach shoreline">
-  <img src="/sand_2.avif" alt="Turquoise lagoon water">
-  <img src="/sand_3.avif" alt="At Balos beach">
+  <img src="/sand_1.avif" alt="Pink sand at Elafonisi">
+  <img src="/sand_2.avif" alt="Pink sand by the water">
+  <img src="/sand_3.avif" alt="Pink patches in the shallows">
 </div>
 
-The beach is surrounded by water from both sides - the one side is with normal depth, crystal clear water, and underwater reefs which are extremely beautiful. 
-![End of road view](/me_elafonisi.avif)
+The beach is surrounded by water on both sides. One side has normal depth, crystal-clear water and stunning underwater reefs.
+![At Elafonisi beach](/me_elafonisi.avif)
 
-The other side is very swallowed with warmer water in which you could lay for hours 😁And you could walk to the rocks in the middle(for perfect Instagramable frames). 
+The other side is very shallow, with warmer water you could lie in for hours 😁 And don't skip the walk to the rocks in the middle (for perfectly Instagrammable shots). 
 
-![End of road view](/other_side.avif)
+![The shallow side of Elafonisi](/other_side.avif)
 
 And I know that the most impressive thing about Elafonisi is the pink sand, so let me show you more of it:
 
 <video width="100%" controls>
-  <source src="/IMG_1808.MOV" type="video/mp4">
+  <source src="/elafonisi.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
