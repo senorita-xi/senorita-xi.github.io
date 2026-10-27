@@ -8,6 +8,7 @@ interface Props {
   category: string;
   location?: string;
   delay?: number;
+  episode?: number;
 }
 
 import { getLang, useTranslations } from '@/i18n/utils';
@@ -15,7 +16,8 @@ const lang = getLang(Astro.currentLocale);
 const t = useTranslations(lang);
 const locale = lang === 'bg' ? 'bg-BG' : 'en-US';
 
-const { title, href, coverImage, description, pubDate, category, location, delay = 0 } = Astro.props;
+const { title, href, coverImage, description, pubDate, category, location, delay = 0, episode } = Astro.props;
+const episodeLabel = episode != null ? `№ ${String(episode).padStart(2, '0')}` : null;
 
 const formattedDate = pubDate.toLocaleDateString(locale, {
   year: 'numeric',
@@ -34,6 +36,7 @@ const formattedDate = pubDate.toLocaleDateString(locale, {
         width="400"
         height="540"
       />
+      {episodeLabel && <span class="card-episode">{episodeLabel}</span>}
       <div class="card-overlay">
         <span class="overlay-read">{t('ui.read')}</span>
       </div>
@@ -78,6 +81,20 @@ const formattedDate = pubDate.toLocaleDateString(locale, {
 
   .post-card:hover .card-image-wrap img {
     transform: scale(1.05);
+  }
+
+  .card-episode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: #c9607a;
+    background: rgba(254, 252, 248, 0.92);
+    padding: 0.45rem 0.85rem 0.5rem;
+    line-height: 1;
   }
 
   .card-overlay {

@@ -34,6 +34,15 @@ export const ui = {
     'ui.copyright':        '© {year}',
     'ui.fallbackNotice':   'This post is not yet available in Bulgarian. Showing the English version.',
 
+    // ── Розови км series ──────────────────────────────
+    'series.label':        'A series',
+    'series.rkm.title':    'Pink Kilometres',
+    'series.rkm.desc':     'Routes, coffee rides and real talk from a Bulgarian girl on a pink bike – around Sofia, Sredna Gora and the Black Sea.',
+    'series.episodes':     'episodes',
+    'series.episode':      'episode',
+    'series.soon':         'The first episodes are on their way.',
+    'series.more':         'More in motion',
+
     // ── Connect page ──────────────────────────────────
     'connect.desc':              'Find me across the internet.',
     'connect.intro':             'Follow along on the platforms where I share the most.',
@@ -71,6 +80,15 @@ export const ui = {
     'ui.backTo':           'Назад към',
     'ui.copyright':        '© {year}',
     'ui.fallbackNotice':   'Тази статия все още не е налична на български. Показва се английската версия.',
+
+    // ── Розови км series ──────────────────────────────
+    'series.label':        'Поредица',
+    'series.rkm.title':    'Розови километри',
+    'series.rkm.desc':     'Маршрути, coffee rides и истински истории от едно българско момиче на розово колело – около София, в Средногорието и по Черноморието.',
+    'series.episodes':     'епизода',
+    'series.episode':      'епизод',
+    'series.soon':         'Първите епизоди идват скоро.',
+    'series.more':         'Още в движение',
 
     // ── Connect page ──────────────────────────────────
     'connect.desc':              'Намери ме в интернет.',

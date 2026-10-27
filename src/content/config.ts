@@ -9,6 +9,8 @@ const postSchema = z.object({
   location:    z.string().optional().default(''),
   tags:        z.array(z.string()).optional(),
   draft:       z.boolean().default(false),
+  series:      z.string().optional(),   // e.g. 'rozovi-km'
+  episode:     z.number().optional(),   // e.g. 4  → shows as #04
 });
 
 export const collections = {

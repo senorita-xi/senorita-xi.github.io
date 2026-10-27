@@ -21,6 +21,15 @@ const desc     = t(descKey);
 const hrefBase = localHref(`/${collection}/`, lang);
 
 const posts = await getCategoryPosts(collection, lang);
+
+// ── Розови км: In Motion gets a featured series block ──────────
+const showSeries   = collection === 'in-motion';
+const seriesPosts  = showSeries
+  ? posts
+      .filter(p => p.data.series === 'rozovi-km')
+      .sort((a, b) => (a.data.episode ?? 0) - (b.data.episode ?? 0))
+  : [];
+const otherPosts   = showSeries ? posts.filter(p => p.data.series !== 'rozovi-km') : posts;
 ---
 
 <BaseLayout
@@ -37,20 +46,64 @@ const posts = await getCategoryPosts(collection, lang);
 
       <hr class="rule" />
 
-      <div class="posts-grid">
-        {posts.map((post, i) => (
-          <PostCard
-            title={post.data.title}
-            href={`${hrefBase}${bareSlug(post.slug)}/`}
-            coverImage={post.data.coverImage}
-            description={post.data.description}
-            pubDate={post.data.pubDate}
-            category={post.data.category}
-            location={post.data.location}
-            delay={i * 60}
-          />
-        ))}
-      </div>
+      {showSeries && (
+        <section class="series reveal" aria-labelledby="series-title">
+          <svg class="series-route" viewBox="0 0 600 160" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M4 120 C 60 40, 110 150, 170 96 S 270 20, 330 78 S 430 150, 480 70 S 560 30, 596 54" />
+            <circle cx="4" cy="120" r="4" /><circle cx="596" cy="54" r="4" />
+          </svg>
+          <div class="series-head">
+            <p class="series-eyebrow">{t('series.label')}</p>
+            <h2 id="series-title" class="series-title">{t('series.rkm.title')}</h2>
+            <div class="series-ornament" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+            <p class="series-desc">{t('series.rkm.desc')}</p>
+            {seriesPosts.length > 0 && (
+              <p class="series-count">{seriesPosts.length} {seriesPosts.length === 1 ? t('series.episode') : t('series.episodes')}</p>
+            )}
+          </div>
+
+          {seriesPosts.length > 0 ? (
+            <div class="posts-grid">
+              {seriesPosts.map((post, i) => (
+                <PostCard
+                  title={post.data.title}
+                  href={`${hrefBase}${bareSlug(post.slug)}/`}
+                  coverImage={post.data.coverImage}
+                  description={post.data.description}
+                  pubDate={post.data.pubDate}
+                  category={post.data.category}
+                  location={post.data.location}
+                  episode={post.data.episode}
+                  delay={i * 60}
+                />
+              ))}
+            </div>
+          ) : (
+            <p class="series-soon">{t('series.soon')}</p>
+          )}
+        </section>
+      )}
+
+      {showSeries && otherPosts.length > 0 && (
+        <h2 class="more-title">{t('series.more')}</h2>
+      )}
+
+      {otherPosts.length > 0 && (
+        <div class="posts-grid">
+          {otherPosts.map((post, i) => (
+            <PostCard
+              title={post.data.title}
+              href={`${hrefBase}${bareSlug(post.slug)}/`}
+              coverImage={post.data.coverImage}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              category={post.data.category}
+              location={post.data.location}
+              delay={i * 60}
+            />
+          ))}
+        </div>
+      )}
     </div>
   </div>
 </BaseLayout>
@@ -64,4 +117,94 @@ const posts = await getCategoryPosts(collection, lang);
   .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 3vw, 2rem); }
   @media (max-width: 900px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 540px) { .posts-grid { grid-template-columns: 1fr; } }
+
+  /* ── Розови км series block ───────────────────────── */
+  .series {
+    --rose: #c9607a;
+    --rose-soft: #e8b4bf;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 80% at 50% 0%, #fbeef0 0%, #fdf6f4 45%, var(--ivory) 100%);
+    padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem) clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: clamp(3rem, 7vw, 5rem);
+  }
+  .series-route {
+    position: absolute;
+    inset: 1.25rem 0 auto 0;
+    width: 100%;
+    height: clamp(90px, 14vw, 160px);
+    pointer-events: none;
+    opacity: 0.55;
+  }
+  .series-route path { fill: none; stroke: var(--rose-soft); stroke-width: 1.4; stroke-dasharray: 2 7; stroke-linecap: round; }
+  .series-route circle { fill: var(--rose-soft); }
+  .series-head {
+    position: relative;
+    text-align: center;
+    max-width: 52ch;
+    margin: 0 auto clamp(2rem, 4vw, 3rem);
+  }
+  .series-eyebrow {
+    font-family: var(--font-label);
+    font-size: 0.8125rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.9rem;
+  }
+  .series-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6.5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .series-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  .series-ornament span { width: 56px; height: 1px; background: var(--accent); }
+  .series-ornament i { font-style: normal; color: var(--rose); font-size: 0.85rem; }
+  .series-desc {
+    font-style: italic;
+    color: #8a7d74;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .series-count {
+    font-family: var(--font-label);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0;
+  }
+  .series-soon {
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.125rem;
+    color: var(--rose);
+    margin: 0;
+  }
+  .more-title {
+    font-family: var(--font-label);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .more-title::after { content: ""; flex: 1; height: 1px; background: var(--cream); }
 </style>
